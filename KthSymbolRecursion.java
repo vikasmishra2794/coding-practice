@@ -1,5 +1,3 @@
-import java.util.HashSet;
-
 public class KthSymbolRecursion {
     public static int generateString(String s, int i, int A, int B) {
         if (i == A) {
@@ -19,8 +17,6 @@ public class KthSymbolRecursion {
         return generateString("0", 1, A, B);
     }
     public static void main(String[] args) {
-        HashSet<Integer> hs = new HashSet<Integer>();
-        hs.add()
-        // System.out.println(kthSymbol(2,2));
+        System.out.println(kthSymbol(2,2));
     }
 }
