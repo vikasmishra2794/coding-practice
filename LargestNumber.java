@@ -47,8 +47,9 @@ public class LargestNumber {
        return result.toString();
     }
     public static void main(String[] args) {
-        List<Integer> A = new ArrayList<Integer>(Arrays.asList(2, 3, 9, 0));
-        System.out.println(largestNumber(A));
+        // List<Integer> A = new ArrayList<Integer>(Arrays.asList(2, 3, 9, 0));
+        // System.out.println(largestNumber(A));
+        System.out.println("3"=="3");
     }
     
 }
