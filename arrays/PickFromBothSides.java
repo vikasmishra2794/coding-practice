@@ -5,35 +5,33 @@ import java.util.Arrays;
 
 public class PickFromBothSides {
     public static int solve(ArrayList<Integer> A, int B) {
-        int i = 0;
+        int[] prefix = new int[A.size()];
+        int[] suffix = new int[A.size()];
+        prefix[0] = A.get(0);
+        for(int i = 1; i < A.size(); i++) {
+            prefix[i] = prefix[i - 1] + A.get(i);
+        }
+        suffix[A.size() - 1] = A.get(A.size() - 1);
+        for(int i = A.size() - 2; i >= 0; i--) {
+            suffix[i] = suffix[i + 1] + A.get(i);
+        }
+        int i = 0, j = B;
         int max = Integer.MIN_VALUE;
-        while(i <= B/2) {
-            int sum = 0;
-            int left = i;
-            int right = B - i;
-            for(int k = 0; k < left; k++) {
-                sum += A.get(k);
+        while(i <= j && (i + j) == B) {
+            if(i == 0 && j == B) {
+                max = Math.max(max, suffix[A.size() - j]);
+                max = Math.max(max, prefix[j - 1]);
+            } else {
+                max = Math.max(max, suffix[A.size() - j] + prefix[i - 1]);
+                max = Math.max(max, suffix[A.size() - i] + prefix[j - 1]);
             }
-            for(int k = A.size() - 1; k >= A.size() - right; k--) {
-                sum += A.get(k);
-            }
-            max = Math.max(max, sum);
-            left = B - i;
-            right = i;
-            sum = 0;
-            for(int k = 0; k < left; k++) {
-                sum += A.get(k);
-            }
-            for(int k = A.size() - 1; k >= A.size() - right; k--) {
-                sum += A.get(k);
-            }
-            max = Math.max(max, sum);
             i++;
+            j--;
         }
         return max;
     }
     public static void main(String[] args) {
-        ArrayList<Integer> A = new ArrayList<Integer>(Arrays.asList(1,2));
-        System.out.println(solve(A, 1));
+        ArrayList<Integer> A = new ArrayList<Integer>(Arrays.asList(5, -2, 3 , 1, 2));
+        System.out.println(solve(A, 3));
     }
 }
