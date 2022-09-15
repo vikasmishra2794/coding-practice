@@ -1,6 +1,6 @@
 package sorting;
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class MergeSort {
     public static int merge(int A[], int start, int mid, int end) {

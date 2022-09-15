@@ -1,7 +1,7 @@
 package sorting;
 
 import java.util.Arrays;
-import java.util.HashSet;
+// import java.util.HashSet;
 
 public class UniqueElements {
     public static int solve(int[] A) {

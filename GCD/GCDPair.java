@@ -1,5 +1,5 @@
 package GCD;
-import java.util.*;
+// import java.util.*;
 
 public class GCDPair {
     // public static int getGCD(int num) {
