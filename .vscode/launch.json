@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch GreaterElements",
+            "request": "launch",
+            "mainClass": "practice_problems.arrays.GreaterElements",
+            "projectName": "coding-practice_14b9276c"
+        },
+        {
+            "type": "java",
             "name": "Launch Test",
             "request": "launch",
             "mainClass": "dynamic_programming.Test",
