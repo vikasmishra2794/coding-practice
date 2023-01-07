@@ -1,21 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-import { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useReducer, useRef, useState } from "react"
+import axios from 'axios';
+import A from './A';
+import B from './B';
+import { act } from "react-dom/test-utils";
 
-function App() {
+export const MyContext = React.createContext({});
+  const App = (props) => {
   const [count, setCount] = useState(0);
-  useEffect(() => {
-    console.log('I am inside useEffect!!');
-  },[])
+  const [count2, setCount2] = useState(0);
+  const myRef = useRef();
+  const buttonClick = () => {
+    console.log("myRef.current:===", myRef.current);
+    clearInterval(myRef.current);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <button onClick={() => setCount(count + 1)}>Click</button>
-        <p>You clicked {count} times</p>
-      </header>
+    <div>
+      <div>sadjfsdgj</div>
+      <div>viksdkskdksdks</div>
     </div>
-  );
-}
+  )
+};
 
 export default App;
