@@ -11,7 +11,8 @@ const A = (props) => {
 
   return (
     <div>
-        <button onClick={incrementOne}>CounterA - {count1}</button>
+      Inside of A component.
+        {/* <button onClick={incrementOne}>CounterA - {count1}</button> */}
     </div>
   )
 };
